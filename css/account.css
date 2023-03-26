@@ -1,0 +1,643 @@
+.account-section {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 0;
+}
+
+.account-content {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.account-header {
+  display: flex;
+  align-items: center;
+  margin: 0 112px;
+}
+
+.account-header h2 {
+  color: #005c7e;
+  font-family: "Noto Sans TC";
+  font-size: 38px;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+.account-header span {
+  flex: 1;
+  height: 2px;
+  background-color: #005c7e;
+}
+
+.account-tab-box {
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.account-tab-list {
+  display: flex;
+  align-items: center;
+}
+
+.account-tab-item {
+  width: 25%;
+  color: #ffffff;
+  background-color: #2196c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 22px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.account-tab-item.active {
+  background-color: #005c7e;
+  position: relative;
+}
+
+.account-tab-item.active::after {
+  border-top-color: #005c7e;
+  border-width: 10px;
+  bottom: -10px;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  z-index: 1;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid rgba(0, 0, 0, 0);
+  border-right: 10px solid rgba(0, 0, 0, 0);
+  border-top: 10px solid #005c7e;
+  border-bottom: 0px;
+}
+.account-tab-item:hover {
+  background-color: #005c7e;
+}
+
+.account-tab-item svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+  margin-right: 10px;
+}
+
+.account-veo {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 20px 0;
+  display: none;
+}
+.account-block {
+  display: block;
+}
+
+.account-modal {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.24);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 25px 25px 25px 25px;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.image {
+  padding: 10px;
+  width: 20%;
+}
+
+.image img {
+  width: 70%;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.account-info {
+  flex: 1;
+  display: flex;
+}
+
+.account-left {
+  padding: 10px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.account-right {
+  padding: 10px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.account-from-item {
+  padding: 0 15px;
+  border-bottom: 1px solid #005c7e;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.account-from-item-label {
+  padding: 10px;
+  width: 30%;
+  box-sizing: border-box;
+  color: #005c7e;
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.account-from-item-content {
+  flex: 1;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-from-item-content span {
+  color: #484848;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.success-btn {
+  margin: 0px 0px 0px 10px;
+  padding: 0px 5px 0px 5px;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 13px 13px 13px 13px;
+  color: #005c7e;
+  font-family: "Roboto";
+}
+
+.copy-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #005c7e;
+}
+
+.copy-icon svg {
+  fill: #005c7e;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  display: block;
+}
+
+.qr-code {
+  width: 20%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.qr-code .image {
+  padding: 20px 10px 0px 10px;
+  width: 100%;
+}
+
+.qr-code .image img {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+
+.qr-code h3 {
+  font-family: "Roboto";
+  font-weight: 600;
+  color: #005c7e;
+  font-size: 15px;
+  text-align: center;
+}
+
+.priview-content {
+  width: 80%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.priview-items {
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #005c7e;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0px 15px 0px 15px;
+}
+
+.priview-items-title {
+  color: #005c7e;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.priview-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.priview-item-content p {
+  margin-bottom: 0;
+  width: 88%;
+  max-width: 88%;
+  color: #484848;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.priview-conent-box {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.priview-conent-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  color: rgb(72, 72, 72);
+}
+
+ol li {
+  color: #484848;
+  font-family: "Noto Sans TC";
+}
+
+.shouyi-list {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.shouyi-item {
+  width: 33.333%;
+}
+
+.shouyi-item-content {
+  background-color: #efefef;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin: 10px 10px 10px 10px;
+  --e-column-margin-right: 10px;
+  --e-column-margin-left: 10px;
+  padding: 25px 25px 25px 25px;
+}
+
+.shouyi-item-content h3 {
+  color: #005c7e;
+  font-size: 25px;
+  font-family: "Roboto";
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.shouyi-menu {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Roboto";
+  font-size: 25px;
+  font-weight: 400;
+  color: #005c7e;
+}
+
+.sghouyi-num {
+  width: 60%;
+  text-align: right;
+}
+
+.shouyi-unit {
+  width: 40%;
+  text-align: right;
+}
+
+.tab-account-list {
+  display: flex;
+  align-items: center;
+}
+
+.tab-account-item {
+  width: 33.333%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #005c7e;
+  padding: 20px 25px;
+  cursor: pointer;
+  color: #005c7e;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.tab-account-item2.active {
+  border: 1px solid #005c7e;
+  border-bottom: none;
+}
+
+.tab-account-item2 {
+  width: 33.333%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #005c7e;
+  padding: 20px 25px;
+  cursor: pointer;
+  color: #005c7e;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.tab-account-item.active {
+  border: 1px solid #005c7e;
+  border-bottom: none;
+}
+
+.tab-account-content {
+  border: 1px solid #005c7e;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+  border-top: none;
+}
+
+.account-btns-list {
+  margin-top: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-bottom: 1px solid #005c7e;
+}
+
+.account-btns-list-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.all-btns {
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #00c6e4;
+  font-family: "Roboto";
+  font-weight: 500;
+  background-color: #00c6e4;
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.jin-btns {
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #00c6e4;
+  font-family: "Roboto";
+  font-weight: 500;
+  background-color: #fff;
+  color: #00c6e4;
+  padding: 12px 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.account-list-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-bottom: 1px solid #005c7e;
+}
+
+.account-list-item-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.account-list-item-top {
+  display: flex;
+  align-items: center;
+}
+
+.account-list-item-top-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.account-list-item-top-left h3 {
+  color: #005c7e;
+  padding: 10px 0;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.left-btns {
+  margin: 0px 0px 0px 5px;
+  padding: 7px 20px 7px 20px;
+  background-color: #2196c2;
+  border-radius: 20px 20px 20px 20px;
+  color: #fff;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.account-list-item-top-right {
+  flex: 1;
+}
+
+.orders {
+  width: 100%;
+  font-size: 15px;
+  color: #005c7e;
+}
+
+.account-list-item-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.account-list-item-bottom-item {
+  width: 25%;
+}
+
+.account-list-item-bottom-item-content {
+  padding: 5px;
+  margin: 5px;
+  background-color: #eaeaea;
+  color: #005c7e;
+  font-size: 15px;
+}
+
+.yue-box {
+  background-color: #efefef;
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.yue-box h3 {
+  font-family: "Roboto";
+  font-weight: 600;
+  color: #005c7e;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.yue-box h4 {
+  font-family: "Roboto";
+  font-weight: 600;
+  color: #005c7e;
+  margin-bottom: 0;
+}
+
+.tuijian-menu .shouyi-menu .sghouyi-num {
+  text-align: left;
+  flex: 1;
+}
+
+.tuijian-menu .shouyi-menu .shouyi-unit {
+  flex: 1;
+}
+
+.tab-account-item2-0 {
+  padding: 60px 40px 40px;
+  display: none;
+}
+.tab-account-item2-as {
+  display: none;
+}
+.tab-account-item2-block {
+  display: block;
+}
+.tab-account-item2-0 .title {
+  color: #484848;
+  font-size: 15px;
+}
+
+.tab-account-item2-0 .input-box {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #484848;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+.input-text {
+  color: #484848;
+  font-size: 14px;
+}
+
+.copu-a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #005c7e;
+  padding: 10px 40px;
+}
+
+.copu-b {
+  text-decoration: none;
+  color: #005c7e;
+  background-color: #fff;
+  padding: 10px 40px;
+}
+
+.descc {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.3em;
+  color: #005c7e;
+  padding-top: 50px;
+}
+
+.qrcode-box {
+  margin-top: 50px;
+  display: block;
+  margin: 50px auto 20px;
+}
+
+.qrcode-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3em;
+  color: #005c7e;
+}
+
+.tab-account-item2-1.tab-account-item2-block {
+  display: flex;
+
+}
+.tab-account-item2-1-left {
+  flex: 1;
+  margin: 10px;
+}
+
+.tab-account-item2-1-left .item {
+  padding : 20px;
+}
+
+.tab-account-item2-as .title {
+  color: #484848;
+  font-size: 15px;
+}
+
+.tab-account-item2-as .input-box {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #484848;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+.account-tables {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+}
+.table-row {
+  display: table-row;
+}
+
+.table-content {
+  display: table-cell;
+  padding: 15px;
+  text-align: center;
+}
+
+.table-header-row .table-content {
+  background-color: #005C7E;
+  color: #fff;
+}
+
+.table-row-n .table-content {
+  background-color: #FFD290;
+}

@@ -1,0 +1,299 @@
+<style>
+  body {
+    --headerBg: #2196c2;
+    --madeng: #005c7e;
+  }
+  .navbar-toggler {
+    color: #fff;
+    border-color: #fff;
+  }
+  .navbar-toggler-icon {
+    background-image: url(../assets/svg/drop.svg);
+  }
+
+  .gateway-header {
+    background-color: var(--headerBg, #2196c2);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s,
+      box-shadow 0.3s;
+    height: 70px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .inline-block {
+    display: inline-block;
+  }
+
+  .dropdown-menu {
+    padding: 0;
+  }
+
+  .dropdown-menu li .dropdown-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .logo {
+    width: 180px;
+    display: inline-block;
+  }
+
+  .logo-box {
+    /* width: 50%;÷ */
+  }
+
+  .collapse {
+    width: fit-content;
+    flex-direction: row-reverse;
+  }
+
+  .nav-item {
+    color: #fff;
+  }
+
+  .nav-link {
+    color: #fff !important;
+    position: relative;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #fff !important;
+    position: relative;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #fff !important;
+  }
+
+  .navbar-nav .nav-link:hover::before {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    content: "";
+    bottom: -15px;
+    left: 0;
+  }
+
+  .nav-item-r {
+    margin-right: 10px;
+  }
+
+  .navbar-nav .nav-link.active::before {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    content: "";
+    bottom: -15px;
+    left: 0;
+  }
+
+  .full-ma-deng {
+    width: 100%;
+    background-color: var(--madeng);
+    height: 40px;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  .full-ma-deng .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .dropdown-item.active {
+    background-color: #2196c2;
+  }
+
+  @media screen and (max-width: 990px) {
+    .container-fluid {
+      position: relative;
+      z-index: 1000;
+      background-color: #fff;
+      padding: 0;
+    }
+
+    .logo-banner {
+      margin-left: 0;
+    }
+    .title-banner {
+      text-align: left;
+    }
+    .desc-banner {
+      text-align: left;
+    }
+    .btn-banner {
+      text-align: left !important;
+    }
+    .navbar-nav .nav-item {
+      color: #484848 !important;
+      margin-right: 0;
+      transition: all 0.3s;
+    }
+    .nav-item .nav-link {
+      color: #484848 !important;
+      padding: 25px 16px;
+      transition: all 0.3s;
+    }
+
+    .nav-item:hover {
+      color: #fff !important;
+      background-color: #2196c2;
+    }
+
+    .nav-item:hover .nav-link {
+      color: #484848 !important;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #fff !important;
+      background-color: #2196c2;
+    }
+
+    .navbar-nav .nav-link {
+      text-align: center;
+    }
+
+    .navbar-nav .nav-link.active {
+      background-color: #2196c2;
+    }
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light gateway-header">
+  <div class="logo-box">
+    <a href="" class="inline-block">
+      <img class="logo" src="../assets/img/LOGO01.svg" alt="" />
+    </a>
+  </div>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item nav-item-0 nav-item-r">
+          <a class="nav-link active" aria-current="page" href="/pages/index.html">首頁</a>
+        </li>
+        <li class="nav-item nav-item-1 dropdown nav-item-r">
+          <a
+            class="nav-link dropdown-toggle"
+            href="/pages/about-us.html"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            關於我們
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item dropdown-item-1-1" href="/pages/protocol.html">客戶協議</a></li>
+            <li><a class="dropdown-item dropdown-item-1-2" href="/pages/policy.html">隱私政策</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-item-2 nav-item-r">
+          <a class="nav-link" href="/pages/news.html">最新消息</a>
+        </li>
+        <li class="nav-item nav-item-3 nav-item-r">
+          <a class="nav-link" href="/pages/process.html">购买流程</a>
+        </li>
+        <li class="nav-item nav-item-4 nav-item-r">
+          <a class="nav-link" href="/pages/cloudhash.html">产品介绍</a>
+        </li>
+        <li class="nav-item dropdown nav-item-5">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            登入/注册
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item dropdown-item-5-1" href="/pages/account.html">会员中心</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+  function getLocation() {
+    const routes = [
+      {
+        num: '0',
+        route: '/pages/index.html',
+      },
+      {
+        num: '1',
+        route: '/pages/about-us.html',
+      },
+      {
+        num: '1-1',
+        route: '/pages/protocol.html',
+      },
+      {
+        num: '1-2',
+        route: '/pages/policy.html',
+      },
+      {
+        num: '2',
+        route: '/pages/news.html',
+      },
+      {
+        num: '3',
+        route: '/pages/process.html',
+      },
+      {
+        num: '4',
+        route: '/pages/cloudhash.html',
+      },
+      {
+        num: '5',
+        route: '/pages/login.html',
+      },
+      {
+        num: '5-1',
+        route: '/pages/account.html',
+      },
+      {
+        num: '5',
+        route: '/pages/login.html',
+      },
+      {
+        num: '5',
+        route: '/pages/register.html',
+      },
+    ]
+    const pathname = window.location.pathname;
+    let route = routes.filter((item) => item.route === pathname);
+    console.log(route);
+    if (route.length > 0) {
+
+      
+      $('.nav-item .nav-link').removeClass('active');
+      if (route[0].num === '1-1' || route[0].num === '1-2') {
+        $(`.nav-item-1 .nav-link`).addClass('active');
+        $(`.dropdown-item-${route[0].num}`).addClass('active')
+      }
+
+      if (route[0].num === '5-1') {
+        $(`.nav-item-5 .nav-link`).addClass('active');
+      }
+      $(`.nav-item-${route[0].num} .nav-link`).addClass('active');
+    }
+  }
+  getLocation();
+</script>

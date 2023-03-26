@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員中心</title>
+    <link rel="stylesheet" href="./../bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+    <link rel="stylesheet" href="../css/account.css" />
+    <script src="./../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div id="head"></div>
+    <script type="text/javascript">
+      $("#head").load("../components/header.html");
+    </script>
+    <section class="account-section">
+      <div class="account-content">
+        <div class="account-header">
+          <span></span>
+          <h2>會員中心</h2>
+          <span></span>
+        </div>
+        <div class="account-tab-box">
+          <div class="account-tab-list">
+            <div class="account-tab-item active">
+              <svg
+                class="e-font-icon-svg e-fas-user"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                ></path>
+              </svg>
+              <span>會員中心</span>
+            </div>
+            <div class="account-tab-item">
+              <svg
+                class="e-font-icon-svg e-far-list-alt"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M464 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h404a6 6 0 0 1 6 6v340a6 6 0 0 1-6 6zm-42-92v24c0 6.627-5.373 12-12 12H204c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h200c6.627 0 12 5.373 12 12zm0-96v24c0 6.627-5.373 12-12 12H204c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h200c6.627 0 12 5.373 12 12zm0-96v24c0 6.627-5.373 12-12 12H204c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h200c6.627 0 12 5.373 12 12zm-252 12c0 19.882-16.118 36-36 36s-36-16.118-36-36 16.118-36 36-36 36 16.118 36 36zm0 96c0 19.882-16.118 36-36 36s-36-16.118-36-36 16.118-36 36-36 36 16.118 36 36zm0 96c0 19.882-16.118 36-36 36s-36-16.118-36-36 16.118-36 36-36 36 16.118 36 36z"
+                ></path>
+              </svg>
+              <span>我的訂單</span>
+            </div>
+            <div class="account-tab-item">
+              <svg
+                class="e-font-icon-svg e-fas-wallet"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
+                ></path>
+              </svg>
+              <span>我的錢包</span>
+            </div>
+            <div class="account-tab-item">
+              <svg
+                class="e-font-icon-svg e-fas-users"
+                viewBox="0 0 640 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6 40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32 208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"
+                ></path>
+              </svg>
+              <span>推薦資訊</span>
+            </div>
+          </div>
+          <div class="account-veo account-veo1 account-block">
+            <div class="account-modal flex align-items">
+              <div class="image">
+                <img src="../assets/img/DTB.jpeg" alt="" />
+              </div>
+              <div class="account-info">
+                <div class="account-left">
+                  <div class="account-from-item">
+                    <div class="account-from-item-label">會員帳號</div>
+                    <div class="account-from-item-content">
+                      <span>superman</span>
+                      <div class="success-btn">已開通</div>
+                    </div>
+                  </div>
+                  <div class="account-from-item">
+                    <div class="account-from-item-label">會員暱稱</div>
+                    <div class="account-from-item-content">
+                      <span>superman</span>
+                    </div>
+                  </div>
+                  <div class="account-from-item">
+                    <div class="account-from-item-label">手機號碼</div>
+                    <div class="account-from-item-content">
+                      <span>+886 0918199648</span>
+                    </div>
+                  </div>
+                  <div class="account-from-item">
+                    <div class="account-from-item-label">E-mail</div>
+                    <div class="account-from-item-content">
+                      <span>XXX@mail.com</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="account-right">
+                  <div class="account-from-item">
+                    <div class="account-from-item-label">推薦人</div>
+                    <div class="account-from-item-content">
+                      <span>superman</span>
+                    </div>
+                  </div>
+                  <div class="account-from-item">
+                    <div class="account-from-item-label">註冊日期</div>
+                    <div class="account-from-item-content">
+                      <span>2022-03-30 23:00:41</span>
+                    </div>
+                  </div>
+                  <div class="account-from-item">
+                    <div class="account-from-item-label">邀請碼</div>
+                    <div class="account-from-item-content">
+                      <span>802440</span>
+                      <div class="copy-icon">
+                        <svg
+                          aria-hidden="true"
+                          class="e-font-icon-svg e-far-copy"
+                          viewBox="0 0 448 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="account-modal flex" style="margin-top: 40px">
+              <div class="qr-code">
+                <div class="image">
+                  <img src="../assets/img/QRcode.png" alt="" />
+                </div>
+                <h3>邀請QR code</h3>
+              </div>
+              <div class="priview-content">
+                <div class="priview-items">
+                  <div class="priview-items-title">邀請連結</div>
+                  <div class="priview-item-content">
+                    <p>
+                      https://bitminer.shakugo.com/index/home/register?code=802440
+                    </p>
+                    <div class="copy-icon">
+                      <svg
+                        aria-hidden="true"
+                        class="e-font-icon-svg e-far-copy"
+                        viewBox="0 0 448 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="priview-conent-box">
+                  <h3 class="priview-conent-title">推薦規則說明：</h3>
+                  <ol>
+                    <li>
+                      Q：推薦返佣功能如何開通？<br />A：累計訂單大於100元（或等值USDT）自動開通。
+                    </li>
+                    <li>
+                      Q：代理返傭如何使用？<br />A：分享鏈接、二維碼海報、推薦碼給新用戶註冊即可鎖定推薦關係。
+                    </li>
+                    <li>
+                      推薦返佣政策細則：
+                      <ul>
+                        <li>
+                          <strong
+                            >產品訂單返佣：直接推薦返4%，間接返1%（A推薦B，B購買訂單，A獲得4%返佣；B推薦C，C購買訂單，A獲得1%返佣，B獲得4%返佣）。</strong
+                          >
+                        </li>
+                        <li>
+                          <strong
+                            >當推薦總金額達1萬USDT時，即可提高返佣比例，直接推薦返5%，間接返2%</strong
+                          >
+                        </li>
+                        <li>
+                          <strong
+                            >直推或是間推累積達10萬U以上加1% (6%3%)</strong
+                          >
+                        </li>
+                        <li>
+                          <strong
+                            >直推或是間推累積達30萬U以上再加1% (7%4%)</strong
+                          >
+                        </li>
+                        <li>
+                          <strong
+                            >直推或是間推累積達50萬U以上再加1% (8%5%)</strong
+                          >
+                        </li>
+                        <li>
+                          <strong
+                            >所有推薦返佣均以USDT結算挖礦賬戶餘額。</strong
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
+                  <h3 class="priview-conent-title">
+                    說明：禁止推薦刷量的假用戶，一旦查實，會撤銷贈送的返佣。
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="account-veo account-veo2">
+            <div class="account-modal">
+              <div class="shouyi-list">
+                <div class="shouyi-item">
+                  <div class="shouyi-item-content">
+                    <h3>當日收益</h3>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">23.55</div>
+                      <div class="shouyi-unit">USDT</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shouyi-item">
+                  <div class="shouyi-item-content">
+                    <h3>累積收益</h3>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">326.84</div>
+                      <div class="shouyi-unit">USDT</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shouyi-item">
+                  <div class="shouyi-item-content">
+                    <h3>質押金額</h3>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">900.00</div>
+                      <div class="shouyi-unit">USDT</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="account-modal" style="margin-top: 40px">
+              <div class="tab-account-list">
+                <div class="tab-account-item active">全部訂單</div>
+                <div class="tab-account-item">進行中訂單</div>
+                <div class="tab-account-item">已完成訂單</div>
+              </div>
+              <div class="tab-account-content">
+                <div class="account-btns-list">
+                  <div class="account-btns-list-content">
+                    <a href="" class="all-btns mr-20">全部</a>
+                    <a href="" class="jin-btns">近7日</a>
+                  </div>
+                </div>
+                <div class="account-list-item">
+                  <div class="account-list-item-content">
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <h3>元算力比特幣01</h3>
+                        <div class="left-btns">進行中</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">
+                          訂單編號：202203303501312546847
+                        </div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-bottom">
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>合約週期</div>
+                          <div>20 天</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>年化報酬率</div>
+                          <div>365 %</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>訂單金額</div>
+                          <div>100.00 USDT</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>所得收益</div>
+                          <div>32.25 USDT</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="account-list-item">
+                  <div class="account-list-item-content">
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <h3>元算力比特幣01</h3>
+                        <div class="left-btns">進行中</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">
+                          訂單編號：202203303501312546847
+                        </div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-bottom">
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>合約週期</div>
+                          <div>20 天</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>年化報酬率</div>
+                          <div>365 %</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>訂單金額</div>
+                          <div>100.00 USDT</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>所得收益</div>
+                          <div>32.25 USDT</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="account-list-item">
+                  <div class="account-list-item-content">
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <h3>元算力比特幣01</h3>
+                        <div class="left-btns">進行中</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">
+                          訂單編號：202203303501312546847
+                        </div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-bottom">
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>合約週期</div>
+                          <div>20 天</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>年化報酬率</div>
+                          <div>365 %</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>訂單金額</div>
+                          <div>100.00 USDT</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>所得收益</div>
+                          <div>32.25 USDT</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="account-veo account-veo3">
+            <div class="account-modal">
+              <div class="yue-box">
+                <h3>錢包餘額</h3>
+                <h4>668.58 USDT</h4>
+              </div>
+            </div>
+            <div class="account-modal" style="margin-top: 40px">
+              <div class="tab-account-list">
+                <div class="tab-account-item2 active">充值</div>
+                <div class="tab-account-item2">提領</div>
+                <div class="tab-account-item2">錢包明細</div>
+              </div>
+              <div class="tab-account-content">
+                <div
+                  class="tab-account-item2-as tab-account-item2-0 tab-account-item2-block"
+                >
+                  <div class="title">錢包地址：</div>
+                  <div class="input-box">
+                    <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
+                    <a href="" class="copu-a">複製</a>
+                  </div>
+                  <div class="descc">
+                    本地址僅接受TRC20地址，請勿往該地址轉入非USDT資產，包括其他關連資產，否則您的資產將無法找回。
+                  </div>
+                  <img
+                    class="qrcode-box"
+                    src="../assets/img/QRcode.png"
+                    alt=""
+                  />
+                  <h3 class="qrcode-title">收款QR code</h3>
+                </div>
+                <div class="tab-account-item2-as tab-account-item2-1">
+                  <div class="tab-account-item2-1-left">
+                    <div class="item">
+                      <div class="title">錢包地址：</div>
+                      <div class="input-box">
+                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
+                        <a href="" class="copu-a">複製</a>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="title">手續費</div>
+                      <div class="input-box">
+                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
+                        <a href="" class="copu-b">USDT</a>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="title">
+                        验证码：將發送驗證碼至 xxx@gmail.com
+                      </div>
+                      <div class="input-box">
+                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
+                        <a href="" class="copu-a">發送驗證碼</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-account-item2-1-left">
+                    <div class="item">
+                      <div class="title">提領金額：</div>
+                      <div class="input-box">
+                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
+                        <a href="" class="copu-b">USDT</a>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="title">提領金額：</div>
+                      <div class="input-box">
+                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
+                        <a href="" class="copu-b">USDT</a>
+                      </div>
+                    </div>
+                    <div class="descc">
+                      本地址僅接受TRC20地址，請勿往該地址轉入非USDT資產，包括其他關連資產，否則您的資產將無法找回。
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-account-item2-as tab-account-item2-2">
+                  <div class="account-btns-list">
+                    <div class="account-btns-list-content">
+                      <a href="" class="all-btns mr-20">全部</a>
+                      <a href="" class="jin-btns">近7日</a>
+                    </div>
+                  </div>
+                  <div class="account-tables">
+                    <div class="table-row table-header-row">
+                      <div class="table-content">時間</div>
+                      <div class="table-content">項目</div>
+                      <div class="table-content">金額</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-content">2022.06.10 23:22:30</div>
+                      <div class="table-content">每日收益</div>
+                      <div class="table-content">1.04</div>
+                    </div>
+                    <div class="table-row table-row-n">
+                      <div class="table-content">2022.06.10 23:22:30</div>
+                      <div class="table-content">每日收益</div>
+                      <div class="table-content">1.04</div>
+                    </div>
+                    <div class="table-row">
+                      <div class="table-content">2022.06.10 23:22:30</div>
+                      <div class="table-content">每日收益</div>
+                      <div class="table-content">1.04</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="account-veo account-veo4">
+            <div class="account-modal">
+              <div class="shouyi-list">
+                <div class="shouyi-item">
+                  <div class="shouyi-item-content tuijian-menu">
+                    <h3>總推薦</h3>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">人數</div>
+                      <div class="shouyi-unit">3人</div>
+                    </div>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">金額</div>
+                      <div class="shouyi-unit">120 USDT</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shouyi-item">
+                  <div class="shouyi-item-content tuijian-menu">
+                    <h3>總推薦</h3>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">人數</div>
+                      <div class="shouyi-unit">3人</div>
+                    </div>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">金額</div>
+                      <div class="shouyi-unit">120 USDT</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shouyi-item">
+                  <div class="shouyi-item-content tuijian-menu">
+                    <h3>總推薦</h3>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">人數</div>
+                      <div class="shouyi-unit">3人</div>
+                    </div>
+                    <div class="shouyi-menu">
+                      <div class="sghouyi-num">金額</div>
+                      <div class="shouyi-unit">120 USDT</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="account-modal" style="margin-top: 40px">
+              <div class="tab-account-content" style="border: none">
+                <div class="account-btns-list">
+                  <div class="account-btns-list-content">
+                    <a href="" class="all-btns mr-20">全部</a>
+                    <a href="" class="jin-btns">近7日</a>
+                  </div>
+                </div>
+                <div class="account-list-item">
+                  <div class="account-list-item-content">
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <h3>元算力比特幣01</h3>
+                        <div class="left-btns">進行中</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">
+                          訂單編號：202203303501312546847
+                        </div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-bottom">
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>合約週期</div>
+                          <div>20 天</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>年化報酬率</div>
+                          <div>365 %</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>訂單金額</div>
+                          <div>100.00 USDT</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>所得收益</div>
+                          <div>32.25 USDT</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="account-list-item">
+                  <div class="account-list-item-content">
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <h3>元算力比特幣01</h3>
+                        <div class="left-btns">進行中</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">
+                          訂單編號：202203303501312546847
+                        </div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-bottom">
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>合約週期</div>
+                          <div>20 天</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>年化報酬率</div>
+                          <div>365 %</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>訂單金額</div>
+                          <div>100.00 USDT</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>所得收益</div>
+                          <div>32.25 USDT</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="account-list-item">
+                  <div class="account-list-item-content">
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <h3>元算力比特幣01</h3>
+                        <div class="left-btns">進行中</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">
+                          訂單編號：202203303501312546847
+                        </div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-top">
+                      <div class="account-list-item-top-left">
+                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
+                      </div>
+                      <div class="account-list-item-top-right">
+                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
+                      </div>
+                    </div>
+                    <div class="account-list-item-bottom">
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>合約週期</div>
+                          <div>20 天</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>年化報酬率</div>
+                          <div>365 %</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>訂單金額</div>
+                          <div>100.00 USDT</div>
+                        </div>
+                      </div>
+
+                      <div class="account-list-item-bottom-item">
+                        <div class="account-list-item-bottom-item-content">
+                          <div>所得收益</div>
+                          <div>32.25 USDT</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="footer"></div>
+    <script type="text/javascript">
+      $("#footer").load("../components/footer.html");
+      $(".account-tab-item").click(function () {
+        if (!$(this).hasClass("active")) {
+          $(".account-tab-item").removeClass("active");
+          $(this).addClass("active");
+          $(".account-veo").removeClass("account-block");
+          $(`.account-veo${$(this).index() + 1}`).addClass("account-block");
+        }
+      });
+      $(".tab-account-item").click(function () {
+        if (!$(this).hasClass("active")) {
+          $(".tab-account-item").removeClass("active");
+          $(this).addClass("active");
+        }
+      });
+
+      $(".tab-account-item2").click(function () {
+        if (!$(this).hasClass("active")) {
+          $(".tab-account-item2").removeClass("active");
+          $(this).addClass("active");
+          // tab-account-item2-1
+          $(".tab-account-item2-as").removeClass("tab-account-item2-block");
+          $(`.tab-account-item2-${$(this).index()}`).addClass(
+            "tab-account-item2-block"
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

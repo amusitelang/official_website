@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DTB miner</title>
+    <link rel="stylesheet" href="./../bootstrap/bootstrap.min.css" />
+    <script src="./../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <div id="head"></div>
+    <script type="text/javascript">
+      $("#head").load("../components/header.html");
+    </script>
+    <div class="full-ma-deng">
+      <div class="container">
+        <div role="alert" style="margin-top: 5px">
+          <marquee>
+            <p style="font-family: 'noto Sans'; font-size: 14px; color: #fff">
+              慶祝官網改版，推薦獎金再升級，直推獎金最高8%，間推獎金最高5%，活動詳情請登入會員查看推薦福利說明。
+            </p></marquee
+          >
+        </div>
+      </div>
+    </div>
+    <div class="iframeVideoBox">
+      <div
+        class="iframeYtVideo"
+        id="iframeYtVideo-01"
+        data-video-id="ghmQrbLtPKg"
+      ></div>
+      <div class="banner-content">
+        <img class="logo-banner" src="../assets/img/LOGO.svg" alt="" />
+        <h1 class="title-banner">雲算力挖礦平台</h1>
+        <div class="desc-banner">在全球範圍內佈局數個大型礦場</div>
+        <div class="btn-banner" style="text-align: center">
+          <a
+            href="https://wordpress-674256-3302185.cloudwaysapps.com/process/"
+            class="elementor-button"
+            role="button"
+          >
+            <span class="elementor-button-content-wrapper">
+              <span class="elementor-button-text">了解詳情</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      /*https://developers.google.com/youtube/iframe_api_reference*/
+      /* youtube 使用 youtube 的控件必须添加 调用成功后 youtube 后自动调用 onYouTubeIframeAPIReady */
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      /* youtube 使用 youtube 的控件必须添加 调用成功后 youtube 后自动调用 onYouTubeIframeAPIRead  end */
+
+      function onYouTubeIframeAPIReady() {
+        $(".iframeYtVideo").each(function (k, v) {
+          var id = $(this).attr("id");
+          var ytId = $(this).attr("data-video-id");
+          var defaults = {
+            width: 640,
+            height: 360,
+            playerVars: {
+              autohide: 0,
+              autoplay: 1,
+              cc_load_policy: 0,
+              controls: 0,
+              fs: 0,
+              iv_load_policy: 3,
+              modestbranding: 1,
+              playsinline: 1,
+              rel: 0,
+              modestbranding: 1,
+            },
+            videoId: ytId,
+            events: {
+              onReady: onPlayerReady,
+              onStateChange: onPlayerStateChange,
+            },
+          };
+          player = new YT.Player(id, defaults);
+
+          function onPlayerReady(event) {
+            // 静音播放  不然不能自动播放
+            event.target.mute();
+            event.target.playVideo();
+          }
+          function onPlayerStateChange(event) {
+            console.log(event.data);
+            switch (event.data) {
+              case -1:
+                break;
+              case 0: // 循环播放视频
+                onPlayerReady(event);
+                break;
+              case 1: // playing
+                break;
+              case 3: // buffering
+                break;
+            }
+          }
+        });
+      }
+    </script>
+    <section
+      class="elementor-section elementor-top-section elementor-element elementor-element-53872df6 elementor-section-content-middle elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+      data-id="53872df6"
+      data-element_type="section"
+      data-settings='{"background_background":"classic"}'
+    >
+      <div class="elementor-container elementor-column-gap-no">
+        <div
+          class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3a1aac86"
+          data-id="3a1aac86"
+          style="display: flex; align-items: center"
+          data-element_type="column"
+        >
+          <div class="elementor-widget-wrap elementor-element-populated">
+            <div
+              class="elementor-element elementor-element-19e2caff elementor-widget elementor-widget-heading"
+              data-id="19e2caff"
+              data-element_type="widget"
+              data-widget_type="heading.default"
+            >
+              <div class="elementor-widget-container">
+                <h3 class="elementor-heading-title elementor-size-default">
+                  DTB miner的目標
+                </h3>
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-39b0b00d elementor-widget elementor-widget-text-editor"
+              data-id="39b0b00d"
+              data-element_type="widget"
+              data-widget_type="text-editor.default"
+            >
+              <div class="elementor-widget-container">
+                <p>
+                  DTB
+                  miner讓挖礦不僅限於加密貨幣愛好者，我們努力為每一位客戶提供加入加密貨幣世界並從挖礦中獲利的機會。DTB
+                  miner透過礦機算力租賃的方式，大大降低了加密貨幣挖礦的投入成本，您不需要購買昂貴的設備，也不需要再浪費時間進行複雜的設置和維護，使每個人都可以更輕鬆的參與加密貨幣挖礦。
+                </p>
+              </div>
+            </div>
+            <div
+              class="elementor-element elementor-element-6c45015 elementor-align-justify elementor-widget__width-initial elementor-mobile-align-justify elementor-widget elementor-widget-button"
+              data-id="6c45015"
+              data-element_type="widget"
+              data-widget_type="button.default"
+            >
+              <div class="elementor-widget-container">
+                <div class="elementor-button-wrapper">
+                  <a
+                    href="https://wordpress-674256-3302185.cloudwaysapps.com/process/"
+                    class="elementor-button-link elementor-button elementor-size-sm"
+                    role="button"
+                  >
+                    <span class="elementor-button-content-wrapper">
+                      <span class="elementor-button-text">了解詳情</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3028498f"
+          data-id="3028498f"
+          data-element_type="column"
+        >
+          <div
+            class="elementor-widget-wrap elementor-element-populated"
+            style="padding: 0 30px 0 0"
+          >
+            <div
+              class="elementor-element elementor-element-1391475 elementor-widget elementor-widget-video"
+              data-id="1391475"
+              data-element_type="widget"
+              data-settings='{"youtube_url":"https:\/\/www.youtube.com\/watch?v=fSz5EuwUSxE","autoplay":"yes","play_on_mobile":"yes","mute":"yes","loop":"yes","video_type":"youtube","controls":"yes"}'
+              data-widget_type="video.default"
+            >
+              <div class="elementor-widget-container">
+                <style>
+                  /*! elementor - v3.11.5 - 14-03-2023 */
+                  .elementor-widget-video .elementor-widget-container {
+                    overflow: hidden;
+                    transform: translateZ(0);
+                  }
+                  .elementor-widget-video .elementor-wrapper iframe,
+                  .elementor-widget-video .elementor-wrapper video {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    border: none;
+                    background-color: #000;
+                  }
+                  .elementor-widget-video
+                    .elementor-open-inline
+                    .elementor-custom-embed-image-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: 50%;
+                  }
+                  .elementor-widget-video
+                    .elementor-custom-embed-image-overlay {
+                    cursor: pointer;
+                    text-align: center;
+                  }
+                  .elementor-widget-video
+                    .elementor-custom-embed-image-overlay:hover
+                    .elementor-custom-embed-play
+                    i {
+                    opacity: 1;
+                  }
+                  .elementor-widget-video
+                    .elementor-custom-embed-image-overlay
+                    img {
+                    display: block;
+                    width: 100%;
+                  }
+                  .elementor-widget-video .e-hosted-video .elementor-video {
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                  }
+                  .e-con-inner > .elementor-widget-video,
+                  .e-con > .elementor-widget-video {
+                    width: var(--container-widget-width);
+                    --flex-grow: var(--container-widget-flex-grow);
+                  }
+                </style>
+                <div class="elementor-wrapper elementor-open-inline">
+                  <iframe
+                    class="elementor-video"
+                    frameborder="0"
+                    allowfullscreen="1"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    title="DTB Miner EN"
+                    width="640"
+                    height="360"
+                    src="https://www.youtube.com/embed/fSz5EuwUSxE?controls=1&amp;rel=0&amp;playsinline=1&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwordpress-674256-3302185.cloudwaysapps.com&amp;widgetid=3"
+                    id="widget4"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="guanyu-me">
+      <div class="elementor-background-overlay"></div>
+      <div class="column-gap-no">
+        <div class="left"></div>
+        <div class="right">
+          <div class="right-list">
+            <div class="right-item">
+              <div class="right-widget-container">
+                <div class="right-image-box-wrapper">
+                  <img src="../assets/img/長久經營.svg" alt="" />
+                  <div class="right-image-box-content">
+                    <h3 class="title">長久經營</h3>
+                    <div class="right-image-box-description">
+                      DTB
+                      miner公司投入經營挖礦事業已有4年左右的時間，隨著規模愈來愈大且看好產業長期發展的潛力，因而發想透過類似認購股票的概念，推出挖礦合約計畫，打破資金及技術門檻限制，讓一般人也有機會參與挖礦的過程。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-item">
+              <div class="right-widget-container">
+                <div class="right-image-box-wrapper">
+                  <img src="../assets/img/持續設廠02.svg" alt="" />
+                  <div class="right-image-box-content">
+                    <h3 class="title">持續設廠</h3>
+                    <div class="right-image-box-description">
+                      DTB miner持續在全球各地設廠，目前廠房仍持續增加中。DTB
+                      miner在全球各地的土地及廠房產權皆為公司買斷持有，同時24小時都有保全及專業軟硬體維修工程師維護管理，提高對投資者的保障。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-item">
+              <div class="right-widget-container">
+                <div class="right-image-box-wrapper">
+                  <img src="../assets/img/輕鬆入門.svg" alt="" />
+                  <div class="right-image-box-content">
+                    <h3 class="title">輕鬆入門</h3>
+                    <div class="right-image-box-description">
+                      DTB
+                      miner雲算力挖礦讓你輕鬆利用更低的成本獲取更高額的報酬，一鍵購買礦機、算力即買即挖，挖礦數據每日自動更新明細，整個過程公開透明，所有收益鏈上可查。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="lingxu-me">
+      <div class="lingxu-mask"></div>
+      <div class="lingxu-container">
+        <div class="lingxu-left">
+          <div class="lingxu-left-line"></div>
+          <h4 class="lingxu-heading-title">
+            跟隨業界領袖 <br />
+            一起挖礦
+          </h4>
+        </div>
+        <div class="lingxu-right">
+          <p>
+            DTB miner
+            集團是全球領先的全方位服務性區塊鏈技術公司，且是加密貨幣經濟體系裡最大的基礎設備供應商，這意味著我們的硬體設備比市場價格便宜，且更有優勢，大大降低了參與加密貨幣挖礦的投入成本。
+          </p>
+          <p>
+            DTB miner
+            已在多個國家/地區部署了多個客戶及業務運營的數據中心，並展開了活躍的加密挖礦業務。
+          </p>
+          <p>
+            為使用 DTB miner 所生產的算力， DTB miner
+            讓所有客戶都能夠透過，方便的使用者介面來購買算力，並時時更新您的帳戶金額，使每個人都能夠透過
+            DTB miner 輕鬆的參與加密貨幣挖礦。
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="can-me">
+      <div class="can-mee-container">
+        <div class="can-me-content">
+          <div class="can-me-top">
+            <div class="can-me-image">
+              <div class="can-me-image-content">
+                <img src="../assets/img/我可以自己挖礦嗎.webp" alt="" />
+              </div>
+            </div>
+            <div class="can-me-top-content">
+              <h2>我可以自己開始挖礦嗎？</h2>
+              <p>
+                現今您可以自行在家挖礦，但單獨挖礦太昂貴且效率低下，專用的挖礦硬件也變得越來越複雜且昂貴。
+              </p>
+            </div>
+          </div>
+          <h3 class="can-me-heading-title">
+            為了在挖礦中獲得穩定的收益，您需要考慮以下幾點：
+          </h3>
+          <div class="can-me-example-list">
+            <div class="can-me-example-item">
+              <div class="can-me-example-item-content">
+                <div class="icon-box">
+                  <span class="elementor-icon">
+                    <svg
+                      aria-hidden="true"
+                      class="e-font-icon-svg e-fas-bullseye"
+                      viewBox="0 0 496 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="item-content-container">
+                  <h3 class="title">電費</h3>
+                  <p class="elementor-icon-box-description">
+                    如果您想自行在家挖礦，請準備好定期支付天價電費。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="can-me-example-item">
+              <div class="can-me-example-item-content">
+                <div class="icon-box">
+                  <span class="elementor-icon">
+                    <svg
+                      aria-hidden="true"
+                      class="e-font-icon-svg e-fas-bullseye"
+                      viewBox="0 0 496 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="item-content-container">
+                  <h3 class="title">空間</h3>
+                  <p class="elementor-icon-box-description">
+                    你需要寬敞的非住宅場所，因為挖礦機器運轉非常嘈雜。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="can-me-example-item">
+              <div class="can-me-example-item-content">
+                <div class="icon-box">
+                  <span class="elementor-icon">
+                    <svg
+                      aria-hidden="true"
+                      class="e-font-icon-svg e-fas-bullseye"
+                      viewBox="0 0 496 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="item-content-container">
+                  <h3 class="title">冷卻和通風</h3>
+                  <p class="elementor-icon-box-description">
+                    您必須確保挖礦所需的清潔度和空氣濕度水平。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="can-me-example-list">
+            <div class="can-me-example-item">
+              <div class="can-me-example-item-content">
+                <div class="icon-box">
+                  <span class="elementor-icon">
+                    <svg
+                      aria-hidden="true"
+                      class="e-font-icon-svg e-fas-bullseye"
+                      viewBox="0 0 496 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="item-content-container">
+                  <h3 class="title">合法性</h3>
+                  <p class="elementor-icon-box-description">
+                    並非每個國家都能合法的使用加密貨幣挖礦。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="can-me-example-item">
+              <div class="can-me-example-item-content">
+                <div class="icon-box">
+                  <span class="elementor-icon">
+                    <svg
+                      aria-hidden="true"
+                      class="e-font-icon-svg e-fas-bullseye"
+                      viewBox="0 0 496 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="item-content-container">
+                  <h3 class="title">全天候不間斷監控</h3>
+                  <p class="elementor-icon-box-description">
+                    您需要不斷監控挖礦過程，以免損失金錢和硬件。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="can-me-example-item">
+              <div class="can-me-example-item-content">
+                <div class="icon-box">
+                  <span class="elementor-icon">
+                    <svg
+                      aria-hidden="true"
+                      class="e-font-icon-svg e-fas-bullseye"
+                      viewBox="0 0 496 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm0 432c-101.69 0-184-82.29-184-184 0-101.69 82.29-184 184-184 101.69 0 184 82.29 184 184 0 101.69-82.29 184-184 184zm0-312c-70.69 0-128 57.31-128 128s57.31 128 128 128 128-57.31 128-128-57.31-128-128-128zm0 192c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="item-content-container">
+                  <h3 class="title">技術能力</h3>
+                  <p class="elementor-icon-box-description">
+                    您需要專業的知識來設置您的加密貨幣挖礦硬件並定期升級。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="xuanze-section">
+      <div class="xuanze-content">
+        <div class="xuanze-section-content">
+          <h4 class="xuanze-title">選擇 DTB miner 是您最好的投資</h4>
+          <p>現在就加入 DTB miner，從今天開始增加您的挖礦收益</p>
+          <div class="btn-content">
+            <a
+              href="#"
+              class="xuanze-btn elementor-button-link elementor-button elementor-size-sm elementor-animation-shrink"
+              role="button"
+            >
+              <span class="elementor-button-content-wrapper">
+                <span class="elementor-button-text">了解詳情</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footer"></section>
+    <script type="text/javascript">
+      $("#footer").load("../components/footer.html");
+    </script>
+  </body>
+  <script src="../js/index.js"></script>
+</html>

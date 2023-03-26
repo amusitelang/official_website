@@ -1,0 +1,153 @@
+.cloud-hash-section {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.cloud-hash-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cloud-item {
+  width: 33.333%;
+}
+
+.cloud-item-content {
+  box-shadow: 0px 0px 5px 0px
+    rgba(137.83125686645505, 137.83125686645505, 137.83125686645505, 0.5);
+  margin: 15px 15px 15px 15px;
+  --e-column-margin-right: 15px;
+  --e-column-margin-left: 15px;
+  padding: 30px 20px 30px 20px;
+  background-color: #f3f6f9;
+}
+
+.cloud-item-title {
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #005c7e;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cloud-item-menu {
+}
+
+.cloud-item-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}
+
+.menu-item-icon {
+  padding: 10px;
+}
+
+.item-icon-box {
+  width: 100%;
+  max-width: 100%;
+  font-size: 22px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.item-icon-box svg {
+  fill: #85899f;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  display: block;
+}
+
+.menu-item-icon {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  color: #005c7e;
+}
+.menu-text {
+  flex: 1;
+}
+
+.menu-btn span.ray {
+  padding: 10px 0px 10px 0px;
+  background-color: #e1e9ff;
+  border-radius: 10px 10px 10px 10px;
+  color: #8d9aff;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 600;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+
+.menu-btn span.ray2 {
+  padding: 10px 0px 10px 0px;
+  background-color: #c9f7f5;
+  border-radius: 10px 10px 10px 10px;
+  color: #55c9bf;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 600;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+
+.menu-btn span.ray3 {
+  padding: 10px 0px 10px 0px;
+  background-color: #FFF4DE;
+  border-radius: 10px 10px 10px 10px;
+  color: #FFAC2C;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 600;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+}
+
+.price-title {
+    color: #2196C2;
+    font-family: "Roboto";
+    font-size: 33px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.ele-button {
+    text-decoration: none;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 500;
+    background-color: #D0D0D0;
+    color: #fff;
+    width: 200px;
+    display: block;
+    padding: 8px 24px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 990px) {
+  .cloud-hash-content {
+    flex-direction: column;
+  }
+  .cloud-item {
+    width: 100%;
+  }
+
+  .cloud-hash-section {
+    padding: 50px 30px;
+  }
+}
