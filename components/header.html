@@ -3,6 +3,9 @@
     --headerBg: #2196c2;
     --madeng: #005c7e;
   }
+  .member_icon {
+    width: 20px;
+  }
   .navbar-toggler {
     color: #fff;
     border-color: #fff;
@@ -183,7 +186,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item nav-item-0 nav-item-r">
-          <a class="nav-link active" aria-current="page" href="/pages/index.html">首頁</a>
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/pages/index.html"
+            >首頁</a
+          >
         </li>
         <li class="nav-item nav-item-1 dropdown nav-item-r">
           <a
@@ -196,8 +204,20 @@
             關於我們
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item dropdown-item-1-1" href="/pages/protocol.html">客戶協議</a></li>
-            <li><a class="dropdown-item dropdown-item-1-2" href="/pages/policy.html">隱私政策</a></li>
+            <li>
+              <a
+                class="dropdown-item dropdown-item-1-1"
+                href="/pages/protocol.html"
+                >客戶協議</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item dropdown-item-1-2"
+                href="/pages/policy.html"
+                >隱私政策</a
+              >
+            </li>
           </ul>
         </li>
         <li class="nav-item nav-item-2 nav-item-r">
@@ -209,91 +229,160 @@
         <li class="nav-item nav-item-4 nav-item-r">
           <a class="nav-link" href="/pages/cloudhash.html">产品介绍</a>
         </li>
-        <li class="nav-item dropdown nav-item-5">
+        <li class="nav-item dropdown nav-item-5 nav-item-r">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle login_name"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
+            style="
+              display: flex;
+              align-items: center;
+              width: 100%;
+              justify-content: center;
+            "
             aria-expanded="false"
           >
-            登入/注册
+            <img
+              class="member_icon"
+              style="margin-right: 10px"
+              src="../assets/img/member_icon.png"
+              alt=""
+            />
+            <span class="merber_name"> 登入/注册</span>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item dropdown-item-5-1" href="/pages/account.html">会员中心</a></li>
+            <li>
+              <a
+                class="dropdown-item dropdown-item-5-1"
+                href="/pages/account.html"
+                >会员中心</a
+              >
+            </li>
+            <li id="logout">
+              <a class="dropdown-item dropdown-item-5-1">登出</a>
+            </li>
           </ul>
+        </li>
+        <li class="nav-item nav-item-6">
+          <a class="nav-link" href="/pages/login.html"> 登入/注册 </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<script src="../js/jquery.min.js"></script>
+<script src="../js/request.js"></script>
+<script src="../js/loading.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/msg.i18n.js"></script>
+<script src="../bootstrap/clipboard.min.js"></script>
 <script>
   function getLocation() {
     const routes = [
       {
-        num: '0',
-        route: '/pages/index.html',
+        num: "0",
+        route: "/pages/index.html",
       },
       {
-        num: '1',
-        route: '/pages/about-us.html',
+        num: "1",
+        route: "/pages/about-us.html",
       },
       {
-        num: '1-1',
-        route: '/pages/protocol.html',
+        num: "1-1",
+        route: "/pages/protocol.html",
       },
       {
-        num: '1-2',
-        route: '/pages/policy.html',
+        num: "1-2",
+        route: "/pages/policy.html",
       },
       {
-        num: '2',
-        route: '/pages/news.html',
+        num: "2",
+        route: "/pages/news.html",
       },
       {
-        num: '3',
-        route: '/pages/process.html',
+        num: "3",
+        route: "/pages/process.html",
       },
       {
-        num: '4',
-        route: '/pages/cloudhash.html',
+        num: "4",
+        route: "/pages/cloudhash.html",
       },
       {
-        num: '5',
-        route: '/pages/login.html',
+        num: "5",
+        route: "/pages/login.html",
       },
       {
-        num: '5-1',
-        route: '/pages/account.html',
+        num: "5-1",
+        route: "/pages/account.html",
       },
       {
-        num: '5',
-        route: '/pages/login.html',
+        num: "5",
+        route: "/pages/login.html",
       },
       {
-        num: '5',
-        route: '/pages/register.html',
+        num: "5",
+        route: "/pages/register.html",
       },
-    ]
+    ];
     const pathname = window.location.pathname;
     let route = routes.filter((item) => item.route === pathname);
-    console.log(route);
     if (route.length > 0) {
-
-      
-      $('.nav-item .nav-link').removeClass('active');
-      if (route[0].num === '1-1' || route[0].num === '1-2') {
-        $(`.nav-item-1 .nav-link`).addClass('active');
-        $(`.dropdown-item-${route[0].num}`).addClass('active')
+      $(".nav-item .nav-link").removeClass("active");
+      if (route[0].num === "1-1" || route[0].num === "1-2") {
+        $(`.nav-item-1 .nav-link`).addClass("active");
+        $(`.dropdown-item-${route[0].num}`).addClass("active");
       }
 
-      if (route[0].num === '5-1') {
-        $(`.nav-item-5 .nav-link`).addClass('active');
+      if (route[0].num === "5-1") {
+        $(`.nav-item-5 .nav-link`).addClass("active");
       }
-      $(`.nav-item-${route[0].num} .nav-link`).addClass('active');
+      $(`.nav-item-${route[0].num} .nav-link`).addClass("active");
     }
   }
   getLocation();
+  $(".nav-item-5").hide();
+
+  if (document.all) {
+    window.attachEvent("onload", function () {
+      var token = localStorage.getItem("token");
+      if (token) {
+        $.postAjax($.api("getUserInfo"), {}).then((res) => {
+          if (res.code === 0) {
+            $(".nav-item-5").show();
+            $(".nav-item-6").hide();
+            $(".merber_name").html(res.data.nickname);
+          }
+        });
+      }
+    }); //对于IE
+  } else {
+    window.addEventListener(
+      "load",
+      function () {
+        var token = localStorage.getItem("token");
+        if (token) {
+          $.postAjax($.api("getUserInfo"), {}).then((res) => {
+            console.log("用户信息", res);
+            if (res.code === 0) {
+              $(".nav-item-5").show();
+              $(".nav-item-6").hide();
+              $(".merber_name").html(res.data.nickname);
+            }
+          });
+        }
+      },
+      false
+    ); //对于FireFox
+  }
+
+  $("#logout").click(function () {
+    console.log(1);
+    $.postAjax($.api("logout"), {}).then(() => {
+      localStorage.removeItem("token");
+      $.success("logout success");
+      setTimeout(() => {
+        location.replace("/pages/index.html");
+      }, 2000);
+    });
+  });
 </script>

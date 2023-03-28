@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>會員中心</title>
-    <link rel="stylesheet" href="./../bootstrap/bootstrap.min.css" />
+    <script src="./../js/jquery.min.js"></script>
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../bootstrap/bootstrap-datepicker.min.js"></script>
+    <script src="../bootstrap/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script src="../bootstrap/jquery.qrcode.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../bootstrap/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/about.css" />
     <link rel="stylesheet" href="../css/account.css" />
-    <script src="./../js/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <div id="head"></div>
-    <script type="text/javascript">
-      $("#head").load("../components/header.html");
-    </script>
+
     <section class="account-section">
       <div class="account-content">
         <div class="account-header">
@@ -84,26 +87,26 @@
                   <div class="account-from-item">
                     <div class="account-from-item-label">會員帳號</div>
                     <div class="account-from-item-content">
-                      <span>superman</span>
+                      <span id="username"></span>
                       <div class="success-btn">已開通</div>
                     </div>
                   </div>
                   <div class="account-from-item">
                     <div class="account-from-item-label">會員暱稱</div>
                     <div class="account-from-item-content">
-                      <span>superman</span>
+                      <span id="nickname"></span>
                     </div>
                   </div>
                   <div class="account-from-item">
                     <div class="account-from-item-label">手機號碼</div>
                     <div class="account-from-item-content">
-                      <span>+886 0918199648</span>
+                      <span id="mobile"></span>
                     </div>
                   </div>
                   <div class="account-from-item">
                     <div class="account-from-item-label">E-mail</div>
                     <div class="account-from-item-content">
-                      <span>XXX@mail.com</span>
+                      <span id="email"></span>
                     </div>
                   </div>
                 </div>
@@ -111,20 +114,20 @@
                   <div class="account-from-item">
                     <div class="account-from-item-label">推薦人</div>
                     <div class="account-from-item-content">
-                      <span>superman</span>
+                      <span id="share_man"></span>
                     </div>
                   </div>
                   <div class="account-from-item">
                     <div class="account-from-item-label">註冊日期</div>
                     <div class="account-from-item-content">
-                      <span>2022-03-30 23:00:41</span>
+                      <span id="create_time"></span>
                     </div>
                   </div>
                   <div class="account-from-item">
                     <div class="account-from-item-label">邀請碼</div>
                     <div class="account-from-item-content">
-                      <span>802440</span>
-                      <div class="copy-icon">
+                      <span id="share_code"></span>
+                      <div class="copy-icon" id="copy-share">
                         <svg
                           aria-hidden="true"
                           class="e-font-icon-svg e-far-copy"
@@ -142,21 +145,20 @@
               </div>
             </div>
 
-            <div class="account-modal flex" style="margin-top: 40px">
+            <div class="account-modal flex account-modal2" style="margin-top: 40px">
               <div class="qr-code">
                 <div class="image">
-                  <img src="../assets/img/QRcode.png" alt="" />
+                  <div id="qrcode" style="width: 168px; height: 168px"></div>
+                  <!-- <img src="../assets/img/QRcode.png" alt="" /> -->
                 </div>
-                <h3>邀請QR code</h3>
+                <h3 style="margin-top: 15px">邀請QR code</h3>
               </div>
               <div class="priview-content">
                 <div class="priview-items">
                   <div class="priview-items-title">邀請連結</div>
                   <div class="priview-item-content">
-                    <p>
-                      https://bitminer.shakugo.com/index/home/register?code=802440
-                    </p>
-                    <div class="copy-icon">
+                    <p id="share_link"></p>
+                    <div class="copy-icon" id="share-link-priview">
                       <svg
                         aria-hidden="true"
                         class="e-font-icon-svg e-far-copy"
@@ -229,7 +231,7 @@
                   <div class="shouyi-item-content">
                     <h3>當日收益</h3>
                     <div class="shouyi-menu">
-                      <div class="sghouyi-num">23.55</div>
+                      <div class="sghouyi-num" id="shouyi_today">0</div>
                       <div class="shouyi-unit">USDT</div>
                     </div>
                   </div>
@@ -238,7 +240,7 @@
                   <div class="shouyi-item-content">
                     <h3>累積收益</h3>
                     <div class="shouyi-menu">
-                      <div class="sghouyi-num">326.84</div>
+                      <div class="sghouyi-num" id="shouyi">0</div>
                       <div class="shouyi-unit">USDT</div>
                     </div>
                   </div>
@@ -247,7 +249,7 @@
                   <div class="shouyi-item-content">
                     <h3>質押金額</h3>
                     <div class="shouyi-menu">
-                      <div class="sghouyi-num">900.00</div>
+                      <div class="sghouyi-num" id="benjin">0</div>
                       <div class="shouyi-unit">USDT</div>
                     </div>
                   </div>
@@ -263,168 +265,27 @@
               <div class="tab-account-content">
                 <div class="account-btns-list">
                   <div class="account-btns-list-content">
-                    <a href="" class="all-btns mr-20">全部</a>
-                    <a href="" class="jin-btns">近7日</a>
+                    <a class="all-btns mr-20 active">全部</a>
+                    <a class="jin-btns mr-20">近7日</a>
+                    <div class="parent-input-time mr-20">
+                      <div class="input-append date date1">
+                        <a type="text" class="time-dateer">
+                          <span class="start">請選擇开始日期</span>
+                        </a>
+                        <span class="input-group-addon"></span>
+                      </div>
+
+                      <div class="input-append date date2">
+                        <a type="text" class="time-dateer">
+                          <span class="end">請選擇结束日期</span>
+                        </a>
+                        <span class="input-group-addon"></span>
+                      </div>
+                    </div>
+                    <a class="search-btns active">搜索</a>
                   </div>
                 </div>
-                <div class="account-list-item">
-                  <div class="account-list-item-content">
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <h3>元算力比特幣01</h3>
-                        <div class="left-btns">進行中</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">
-                          訂單編號：202203303501312546847
-                        </div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-bottom">
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>合約週期</div>
-                          <div>20 天</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>年化報酬率</div>
-                          <div>365 %</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>訂單金額</div>
-                          <div>100.00 USDT</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>所得收益</div>
-                          <div>32.25 USDT</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="account-list-item">
-                  <div class="account-list-item-content">
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <h3>元算力比特幣01</h3>
-                        <div class="left-btns">進行中</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">
-                          訂單編號：202203303501312546847
-                        </div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-bottom">
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>合約週期</div>
-                          <div>20 天</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>年化報酬率</div>
-                          <div>365 %</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>訂單金額</div>
-                          <div>100.00 USDT</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>所得收益</div>
-                          <div>32.25 USDT</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="account-list-item">
-                  <div class="account-list-item-content">
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <h3>元算力比特幣01</h3>
-                        <div class="left-btns">進行中</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">
-                          訂單編號：202203303501312546847
-                        </div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-bottom">
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>合約週期</div>
-                          <div>20 天</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>年化報酬率</div>
-                          <div>365 %</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>訂單金額</div>
-                          <div>100.00 USDT</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>所得收益</div>
-                          <div>32.25 USDT</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div id="order-list"></div>
               </div>
             </div>
           </div>
@@ -432,7 +293,7 @@
             <div class="account-modal">
               <div class="yue-box">
                 <h3>錢包餘額</h3>
-                <h4>668.58 USDT</h4>
+                <h4 id="usdt-h4">0 USDT</h4>
               </div>
             </div>
             <div class="account-modal" style="margin-top: 40px">
@@ -447,17 +308,19 @@
                 >
                   <div class="title">錢包地址：</div>
                   <div class="input-box">
-                    <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
-                    <a href="" class="copu-a">複製</a>
+                    <div class="input-text" id="wallet_address"></div>
+                    <a id="copy-address" class="copu-a" style="cursor: pointer"
+                      >複製</a
+                    >
                   </div>
                   <div class="descc">
                     本地址僅接受TRC20地址，請勿往該地址轉入非USDT資產，包括其他關連資產，否則您的資產將無法找回。
                   </div>
-                  <img
+                  <div
                     class="qrcode-box"
-                    src="../assets/img/QRcode.png"
-                    alt=""
-                  />
+                    id="qqrrccooddee"
+                    style="width: 130px; height: 130px; margin: 50px auto"
+                  ></div>
                   <h3 class="qrcode-title">收款QR code</h3>
                 </div>
                 <div class="tab-account-item2-as tab-account-item2-1">
@@ -465,24 +328,41 @@
                     <div class="item">
                       <div class="title">錢包地址：</div>
                       <div class="input-box">
-                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
-                        <a href="" class="copu-a">複製</a>
+                        <div class="input-text input-text-bbox">
+                          <input
+                            type="text"
+                            class="input_form"
+                            id="address_input"
+                            placeholder="請輸入錢包地址"
+                          />
+                        </div>
+                        <a class="copu-a" id="paste-address">贴上</a>
                       </div>
                     </div>
                     <div class="item">
                       <div class="title">手續費</div>
                       <div class="input-box">
-                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
-                        <a href="" class="copu-b">USDT</a>
+                        <div class="input-text">1</div>
+                        <a class="copu-b">USDT</a>
                       </div>
                     </div>
                     <div class="item">
-                      <div class="title">
+                      <div class="title" id="input_title">
                         验证码：將發送驗證碼至 xxx@gmail.com
                       </div>
                       <div class="input-box">
-                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
-                        <a href="" class="copu-a">發送驗證碼</a>
+                        <div class="input-text input-text-bbox">
+                          <input
+                            type="text"
+                            class="input_form"
+                            id="sms_code_input"
+                            placeholder="請輸入驗證碼"
+                          />
+                        </div>
+                        <a class="copu-a" id="sendwdsms">發送驗證碼</a>
+                        <a class="copu-a cpopu-a-dis" id="sendwdsms-disabled"
+                          ><span>60</span>s后重新發送</a
+                        >
                       </div>
                     </div>
                   </div>
@@ -490,50 +370,70 @@
                     <div class="item">
                       <div class="title">提領金額：</div>
                       <div class="input-box">
-                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
-                        <a href="" class="copu-b">USDT</a>
+                        <div class="input-text input-text-bbox">
+                          <input
+                            type="number"
+                            class="input_form"
+                            id="num_input"
+                            placeholder="請輸入提領金額"
+                          />
+                        </div>
+                        <a class="copu-b">USDT</a>
                       </div>
                     </div>
                     <div class="item">
-                      <div class="title">提領金額：</div>
+                      <div class="title">到帳金額：</div>
                       <div class="input-box">
-                        <div class="input-text">ADFJRifke4667ooXFE4535ddE</div>
-                        <a href="" class="copu-b">USDT</a>
+                        <div class="input-text" id="daozhang">0</div>
+                        <a class="copu-b">USDT</a>
                       </div>
                     </div>
                     <div class="descc">
                       本地址僅接受TRC20地址，請勿往該地址轉入非USDT資產，包括其他關連資產，否則您的資產將無法找回。
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 20px;
+                      "
+                    >
+                      <a class="copu-a" id="submit_with">提領</a>
                     </div>
                   </div>
                 </div>
                 <div class="tab-account-item2-as tab-account-item2-2">
                   <div class="account-btns-list">
                     <div class="account-btns-list-content">
-                      <a href="" class="all-btns mr-20">全部</a>
-                      <a href="" class="jin-btns">近7日</a>
+                      <a class="all-btns1 active mr-20">全部</a>
+                      <a class="jin-btns1  mr-20">近7日</a>
+                      <div class="parent-input-time mr-20">
+                        <div class="input-append date date3">
+                          <a type="text" class="time-dateer">
+                            <span class="start">請選擇开始日期</span>
+                          </a>
+                          <span class="input-group-addon"></span>
+                        </div>
+
+                        <div class="input-append date date4">
+                          <a type="text" class="time-dateer">
+                            <span class="end">請選擇结束日期</span>
+                          </a>
+                          <span class="input-group-addon"></span>
+                        </div>
+                      </div>
+                      <a class="search-btns1 active">搜索</a>
                     </div>
                   </div>
                   <div class="account-tables">
-                    <div class="table-row table-header-row">
+                    <div class="table-header-row">
                       <div class="table-content">時間</div>
                       <div class="table-content">項目</div>
                       <div class="table-content">金額</div>
                     </div>
-                    <div class="table-row">
-                      <div class="table-content">2022.06.10 23:22:30</div>
-                      <div class="table-content">每日收益</div>
-                      <div class="table-content">1.04</div>
-                    </div>
-                    <div class="table-row table-row-n">
-                      <div class="table-content">2022.06.10 23:22:30</div>
-                      <div class="table-content">每日收益</div>
-                      <div class="table-content">1.04</div>
-                    </div>
-                    <div class="table-row">
-                      <div class="table-content">2022.06.10 23:22:30</div>
-                      <div class="table-content">每日收益</div>
-                      <div class="table-content">1.04</div>
-                    </div>
+                  </div>
+                  <div id="account-tables-more" style="display: flex; justify-content: center; width: 100%;margin-top: 20px;">
+                    <a class="copu-a" id="tables-more">加载更多</a>
                   </div>
                 </div>
               </div>
@@ -547,206 +447,65 @@
                     <h3>總推薦</h3>
                     <div class="shouyi-menu">
                       <div class="sghouyi-num">人數</div>
-                      <div class="shouyi-unit">3人</div>
+                      <div class="shouyi-unit" id="total_num"><span>0</span>人</div>
                     </div>
                     <div class="shouyi-menu">
                       <div class="sghouyi-num">金額</div>
-                      <div class="shouyi-unit">120 USDT</div>
+                      <div class="shouyi-unit" id="rec_buy_amount">120 USDT</div>
                     </div>
                   </div>
                 </div>
                 <div class="shouyi-item">
                   <div class="shouyi-item-content tuijian-menu">
-                    <h3>總推薦</h3>
+                    <h3>直接推薦</h3>
                     <div class="shouyi-menu">
                       <div class="sghouyi-num">人數</div>
-                      <div class="shouyi-unit">3人</div>
+                      <div class="shouyi-unit" id="first_num"><span>0</span>人</div>
                     </div>
                     <div class="shouyi-menu">
                       <div class="sghouyi-num">金額</div>
-                      <div class="shouyi-unit">120 USDT</div>
+                      <div class="shouyi-unit" id="pid_sum">120 USDT</div>
                     </div>
                   </div>
                 </div>
                 <div class="shouyi-item">
                   <div class="shouyi-item-content tuijian-menu">
-                    <h3>總推薦</h3>
+                    <h3>間接推薦</h3>
                     <div class="shouyi-menu">
                       <div class="sghouyi-num">人數</div>
-                      <div class="shouyi-unit">3人</div>
+                      <div class="shouyi-unit" id="second_num"><span>0</span>人</div>
                     </div>
                     <div class="shouyi-menu">
                       <div class="sghouyi-num">金額</div>
-                      <div class="shouyi-unit">120 USDT</div>
+                      <div class="shouyi-unit" id="ppid_sum">120 USDT</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="account-modal" style="margin-top: 40px">
-              <div class="tab-account-content" style="border: none">
+              <div class="tab-account-content" id="tuijian-list" style="border: none">
                 <div class="account-btns-list">
-                  <div class="account-btns-list-content">
-                    <a href="" class="all-btns mr-20">全部</a>
-                    <a href="" class="jin-btns">近7日</a>
-                  </div>
-                </div>
-                <div class="account-list-item">
-                  <div class="account-list-item-content">
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <h3>元算力比特幣01</h3>
-                        <div class="left-btns">進行中</div>
+                  <div class="account-btns-list-content account-btns-list-content3">
+                    <a class="all-btns2 active mr-20">全部</a>
+                    <a class="jin-btns2 mr-20">直接</a>
+                    <a class="jin-btns3 mr-20">間接</a>
+                    <div class="parent-input-time parent-input-time3 mr-20">
+                      <div class="input-append date date5">
+                        <a type="text" class="time-dateer">
+                          <span class="start">請選擇开始日期</span>
+                        </a>
+                        <span class="input-group-addon"></span>
                       </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">
-                          訂單編號：202203303501312546847
-                        </div>
+
+                      <div class="input-append date date6">
+                        <a type="text" class="time-dateer">
+                          <span class="end">請選擇结束日期</span>
+                        </a>
+                        <span class="input-group-addon"></span>
                       </div>
                     </div>
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-bottom">
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>合約週期</div>
-                          <div>20 天</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>年化報酬率</div>
-                          <div>365 %</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>訂單金額</div>
-                          <div>100.00 USDT</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>所得收益</div>
-                          <div>32.25 USDT</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="account-list-item">
-                  <div class="account-list-item-content">
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <h3>元算力比特幣01</h3>
-                        <div class="left-btns">進行中</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">
-                          訂單編號：202203303501312546847
-                        </div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-bottom">
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>合約週期</div>
-                          <div>20 天</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>年化報酬率</div>
-                          <div>365 %</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>訂單金額</div>
-                          <div>100.00 USDT</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>所得收益</div>
-                          <div>32.25 USDT</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="account-list-item">
-                  <div class="account-list-item-content">
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <h3>元算力比特幣01</h3>
-                        <div class="left-btns">進行中</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">
-                          訂單編號：202203303501312546847
-                        </div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-top">
-                      <div class="account-list-item-top-left">
-                        <div class="orders">訂購時間：2022-06-10 18:00:25</div>
-                      </div>
-                      <div class="account-list-item-top-right">
-                        <div class="orders">結束時間：2022-06-30 18:00:25</div>
-                      </div>
-                    </div>
-                    <div class="account-list-item-bottom">
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>合約週期</div>
-                          <div>20 天</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>年化報酬率</div>
-                          <div>365 %</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>訂單金額</div>
-                          <div>100.00 USDT</div>
-                        </div>
-                      </div>
-
-                      <div class="account-list-item-bottom-item">
-                        <div class="account-list-item-bottom-item-content">
-                          <div>所得收益</div>
-                          <div>32.25 USDT</div>
-                        </div>
-                      </div>
-                    </div>
+                    <a class="search-btns2 active">搜索</a>
                   </div>
                 </div>
               </div>
@@ -757,33 +516,11 @@
     </section>
     <div id="footer"></div>
     <script type="text/javascript">
-      $("#footer").load("../components/footer.html");
-      $(".account-tab-item").click(function () {
-        if (!$(this).hasClass("active")) {
-          $(".account-tab-item").removeClass("active");
-          $(this).addClass("active");
-          $(".account-veo").removeClass("account-block");
-          $(`.account-veo${$(this).index() + 1}`).addClass("account-block");
-        }
-      });
-      $(".tab-account-item").click(function () {
-        if (!$(this).hasClass("active")) {
-          $(".tab-account-item").removeClass("active");
-          $(this).addClass("active");
-        }
-      });
-
-      $(".tab-account-item2").click(function () {
-        if (!$(this).hasClass("active")) {
-          $(".tab-account-item2").removeClass("active");
-          $(this).addClass("active");
-          // tab-account-item2-1
-          $(".tab-account-item2-as").removeClass("tab-account-item2-block");
-          $(`.tab-account-item2-${$(this).index()}`).addClass(
-            "tab-account-item2-block"
-          );
-        }
-      });
+      $("#head").load("../components/header.html");
     </script>
+    <script type="text/javascript">
+      $("#footer").load("../components/footer.html");
+    </script>
+    <script src="../js/pages/account.js"></script>
   </body>
 </html>

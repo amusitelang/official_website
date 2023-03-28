@@ -5,13 +5,14 @@
 
 a {
     text-decoration: none;
-    color: #6d6d6d;
+    color: #6d6d6d !important;
 }
 
 .login-content {
   width: 40%;
   margin: 0 auto;
 }
+
 
 .login_title {
   font-size: 18px;
@@ -142,6 +143,15 @@ textarea:focus {
   background-color: #fff;
   border-color: #eaeaea;
   box-shadow: none;
+}
+
+.disabled_code {
+  background-color: #eaeaea;
+  color: #444;
+  cursor: no-drop;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
