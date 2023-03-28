@@ -15,10 +15,10 @@
     <div id="head"></div>
     <section class="login-section">
       <div class="login-content">
-        <div class="login_title">會員註冊</div>
+        <div class="login_title" i18n="會員註冊">會員註冊</div>
         <form>
           <div class="login_form">
-            <div class="text">國碼</div>
+            <div class="text" i18n="國碼">國碼</div>
             <div class="login_select_wrap">
               <select
                 name="quyu"
@@ -35,62 +35,68 @@
                 type="text"
                 style="color: #c9c9c9 !important"
               />
-              <div class="send_code bg_blue">發送驗證碼</div>
-              <div class="disabled_code bg_blue"><span>60</span> s重新發送</div>
+              <div class="send_code bg_blue" i18n="發送驗證碼">發送驗證碼</div>
+              <div class="disabled_code bg_blue"><span>60</span> s <span i18n="后重新發送">后重新發送</span></div>
             </div>
-            <div class="text">驗證碼</div>
+            <div class="text" i18n="驗證碼">驗證碼</div>
             <input
               type="text"
               id="sms_code"
               name="sms_code"
               class="login_input"
+              i18n="請輸入驗證碼"
               placeholder="請輸入驗證碼"
             />
-            <div class="text">帳號</div>
+            <div class="text" i18n="帳號">帳號</div>
             <input
               type="text"
               id="account"
               name="username"
               class="login_input"
+              i18n="請輸入帳號"
               placeholder="請輸入帳號"
             />
-            <div class="text">密碼</div>
+            <div class="text" i18n="密碼">密碼</div>
             <input
               type="password"
               id="psw"
               name="password"
               class="login_input"
+              i18n="請輸入密碼"
               placeholder='請輸入密碼"'
             />
-            <div class="text">確認密碼</div>
+            <div class="text" i18n="確認密碼">確認密碼</div>
             <input
               type="password"
               id="confirm_psw"
               name="confirm_password"
               class="login_input"
+              i18n="請再次輸入密碼"
               placeholder="請再次輸入密碼"
             />
-            <div class="text">暱稱</div>
+            <div class="text" i18n="暱稱">暱稱</div>
             <input
               type="text"
               id="name"
               name="nickname"
               class="login_input"
+              i18n="請輸入暱稱"
               placeholder="請輸入暱稱"
             />
-            <div class="text">推薦碼</div>
+            <div class="text" i18n="推薦碼">推薦碼</div>
             <input
               type="text"
               id="share_code"
               name="share_code"
               value=""
               class="login_input"
+              i18n="請輸入推薦代碼"
               placeholder="請輸入推薦代碼"
             />
             <!-- <div class="forget">忘記密碼？</div> -->
-            <div class="btn_login register">註冊</div>
+            <div class="btn_login register" i18n="註冊">註冊</div>
             <div class="go_register">
-              <a href="/pages/login.html">前往登入</a>
+              <a href="/pages/login.html" i18n="前往登入">前往登入</a>
             </div>
           </div>
         </form>

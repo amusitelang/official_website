@@ -21,8 +21,13 @@ var money_page = 1;
 var money_size = 20;
 var money_total = 0;
 var money_shengyu_total = 0;
+var lang = localStorage.getItem('lang');
+if (!lang) {
+  lang = 'tch';
+}
 window.onload = function () {
   $(".success-btn").hide();
+  $.paragraphI18n('account1', 'account')
   var token = localStorage.getItem("token");
   if (token) {
     $.postAjax($.api("getUserInfo"), {}).then((res) => {
@@ -347,25 +352,23 @@ function getOrderList() {
 }
 
 function getTime() {
+  const params = {
+    format: "yyyy-mm-dd",
+    autoclose: true,
+    todayHighlight: true,
+  }
+  if (lang === 'tch' || lang === 'sch') {
+    params.language = 'zh-CN';
+  }
   $(".input-append.date1")
-    .datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      todayHighlight: true,
-      language: "zh-CN", //语言设置
-    })
+    .datepicker(params)
     .on("changeDate", function (e) {
       time = e.format();
       $(".input-append.date1 .start")[0].innerText = e.format();
     });
 
   $(".input-append.date2")
-    .datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      todayHighlight: true,
-      language: "zh-CN", //语言设置
-    })
+    .datepicker(params)
     .on("changeDate", function (e) {
       time = e.format();
       $(".input-append.date2 .end")[0].innerText = e.format();
@@ -389,25 +392,23 @@ function countdown() {
 }
 
 function getTime2() {
+  const params = {
+    format: "yyyy-mm-dd",
+    autoclose: true,
+    todayHighlight: true,
+  }
+  if (lang === 'tch' || lang === 'sch') {
+    params.language = 'zh-CN';
+  }
   $(".input-append.date3")
-    .datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      todayHighlight: true,
-      language: "zh-CN", //语言设置
-    })
+    .datepicker(params)
     .on("changeDate", function (e) {
       time = e.format();
       $(".input-append.date3 .start")[0].innerText = e.format();
     });
 
   $(".input-append.date4")
-    .datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      todayHighlight: true,
-      language: "zh-CN", //语言设置
-    })
+    .datepicker(params)
     .on("changeDate", function (e) {
       time = e.format();
       $(".input-append.date4 .end")[0].innerText = e.format();
@@ -415,25 +416,23 @@ function getTime2() {
 }
 
 function getTime3() {
+  const params = {
+    format: "yyyy-mm-dd",
+    autoclose: true,
+    todayHighlight: true,
+  }
+  if (lang === 'tch' || lang === 'sch') {
+    params.language = 'zh-CN';
+  }
   $(".input-append.date5")
-    .datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      todayHighlight: true,
-      language: "zh-CN", //语言设置
-    })
+    .datepicker(params)
     .on("changeDate", function (e) {
       time = e.format();
       $(".input-append.date5 .start")[0].innerText = e.format();
     });
 
   $(".input-append.date6")
-    .datepicker({
-      format: "yyyy-mm-dd",
-      autoclose: true,
-      todayHighlight: true,
-      language: "zh-CN", //语言设置
-    })
+    .datepicker(params)
     .on("changeDate", function (e) {
       time = e.format();
       $(".input-append.date6 .end")[0].innerText = e.format();

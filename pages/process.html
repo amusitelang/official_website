@@ -21,7 +21,7 @@
       <div class="banner-content">
         <div class="content-view">
           <div class="line"></div>
-          <div class="banner-title">購買流程</div>
+          <div class="banner-title" i18n="購買流程">購買流程</div>
           <div class="line"></div>
         </div>
       </div>
@@ -82,8 +82,8 @@
             </svg>
           </span>
           <div class="play-content-menu">
-            <h3>01.用戶註冊登入</h3>
-            <p class="play-content-box-description">
+            <h3 i18n="01.用戶註冊登入">01.用戶註冊登入</h3>
+            <p class="play-content-box-description" i18n="在 DTB miner上註冊成為會員，登錄後開始使用。">
               在 DTB miner上註冊成為會員，登錄後開始使用。
             </p>
           </div>
@@ -195,8 +195,8 @@
             </svg>
           </span>
           <div class="play-content-menu">
-            <h3>02.選購算力</h3>
-            <p class="play-content-box-description">
+            <h3 i18n="02.選購算力">02.選購算力</h3>
+            <p class="play-content-box-description" i18n="在DTB miner上選擇您想購買的算力合約。">
               在DTB miner上選擇您想購買的算力合約。
             </p>
           </div>
@@ -270,7 +270,7 @@
           </span>
           <div class="play-content-menu">
             <h3>03.付款</h3>
-            <p class="play-content-box-description">
+            <p class="play-content-box-description" i18n="使用您錢包內的USDT，為您所購買的算力合約付款。">
               使用您錢包內的USDT，為您所購買的算力合約付款。
             </p>
           </div>
@@ -333,7 +333,7 @@
           </span>
           <div class="play-content-menu">
             <h3>04.發送客戶訂單</h3>
-            <p class="play-content-box-description">
+            <p class="play-content-box-description" i18n="我們發送您的訂單到位於DTB miner 的大型挖礦數據中心。">
               我們發送您的訂單到位於DTB miner 的大型挖礦數據中心。
             </p>
           </div>
@@ -439,7 +439,7 @@
           </span>
           <div class="play-content-menu">
             <h3>05.挖礦開始</h3>
-            <p class="play-content-box-description">
+            <p class="play-content-box-description" i18n="使用頂級效能的高端設備，挖掘加密貨幣。透過 DTB miner平台查看狀況。">
               使用頂級效能的高端設備，挖掘加密貨幣。透過 DTB miner
               平台查看狀況。
             </p>
@@ -582,8 +582,8 @@
             </svg>
           </span>
           <div class="play-content-menu">
-            <h3>06.客戶收益</h3>
-            <p class="play-content-box-description">
+            <h3 i18n="06.客戶收益">06.客戶收益</h3>
+            <p class="play-content-box-description" i18n="您每天都會收到您的挖礦收益，當天即可提款。">
               您每天都會收到您的挖礦收益，當天即可提款。
             </p>
           </div>
@@ -596,14 +596,14 @@
           <img src="../assets/img/DTB-miner-02.webp" alt="" />
         </div>
         <div class="shangpin-container">
-          <h2>DTB miner 是您最好的投資​</h2>
-          <p>
+          <h2 i18n="DTB miner 是您最好的投資">DTB miner 是您最好的投資​</h2>
+          <p id="about-us2">
             DTB miner
             集中採購實體礦機，全方位的專業維運服務，提供開放、專業、透明的真實挖礦服務。在世界各地通過一站式專業管理，鏈接行業頂級礦機製造商，提供最優質的機器，以最有效的方式保持礦場的高效產出。專業的運維管理服務團隊，使您可以放心加入
             DTB miner 賺取挖礦收入。
           </p>
           <div>
-            <span class="current-btn"> 了解產品 </span>
+            <span i18n="了解產品" class="current-btn"> 了解產品 </span>
           </div>
         </div>
       </div>
@@ -611,6 +611,11 @@
     <div id="footer"></div>
     <script type="text/javascript">
       $("#footer").load("../components/footer.html");
+    </script>
+    <script >
+       window.onload = function () {
+        $.paragraphI18n('about-us2', 'about-us')
+      }
     </script>
   </body>
 </html>

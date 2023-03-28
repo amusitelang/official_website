@@ -18,10 +18,10 @@
     </script>
     <section class="login-section">
       <div class="login-content">
-        <div class="login_title">忘記密碼</div>
+        <div class="login_title" i18n="忘記密碼">忘記密碼</div>
         <form>
           <div class="login_form">
-            <div class="text">國碼</div>
+            <div class="text" i18n="國碼">國碼</div>
             <div class="login_select_wrap">
               <select
                 name="quyu"
@@ -38,18 +38,19 @@
                 type="text"
                 style="color: #c9c9c9 !important"
               />
-              <div class="send_code bg_blue">發送驗證碼</div>
-              <div class="disabled_code bg_blue"><span>60</span> s重新發送</div>
+              <div class="send_code bg_blue" i18n="發送驗證碼">發送驗證碼</div>
+              <div class="disabled_code bg_blue"><span>60</span> s<span i18n="后重新發送">后重新發送</span></div>
             </div>
-            <div class="text">驗證碼</div>
+            <div class="text" i18n="驗證碼">驗證碼</div>
             <input
               type="text"
               id="sms_code"
               name="sms_code"
               class="login_input"
+              i18n="請輸入驗證碼"
               placeholder="請輸入驗證碼"
             />
-            <div class="text">密碼</div>
+            <div class="text" i18n="密碼">密碼</div>
             <input
               type="password"
               id="psw"
@@ -57,18 +58,19 @@
               class="login_input"
               placeholder='請輸入密碼"'
             />
-            <div class="text">確認密碼</div>
+            <div class="text" i18n="確認密碼">確認密碼</div>
             <input
               type="password"
               id="confirm_psw"
               name="confirm_password"
               class="login_input"
+              i18n="請再次輸入密碼"
               placeholder="請再次輸入密碼"
             />
 
-            <div class="btn_login register">提交</div>
+            <div class="btn_login register" i18n="提交">提交</div>
             <div class="go_register">
-              <a href="/pages/login.html">前往登入</a>
+              <a href="/pages/login.html" i18n="前往登入">前往登入</a>
             </div>
           </div>
         </form>
