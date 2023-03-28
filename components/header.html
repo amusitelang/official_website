@@ -3,13 +3,20 @@
     --headerBg: #2196c2;
     --madeng: #005c7e;
   }
+
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+
   .member_icon {
     width: 20px;
   }
+
   .navbar-toggler {
     color: #fff;
     border-color: #fff;
   }
+
   .navbar-toggler-icon {
     background-image: url(../assets/svg/drop.svg);
   }
@@ -103,12 +110,17 @@
     left: 0;
     z-index: 100;
   }
+
   .full-ma-deng .container {
     width: 100%;
     max-width: 100%;
   }
+
   .dropdown-item.active {
     background-color: #2196c2;
+  }
+  .language-item {
+    cursor: pointer;
   }
 
   @media screen and (max-width: 990px) {
@@ -122,20 +134,25 @@
     .logo-banner {
       margin-left: 0;
     }
+
     .title-banner {
       text-align: left;
     }
+
     .desc-banner {
       text-align: left;
     }
+
     .btn-banner {
       text-align: left !important;
     }
+
     .navbar-nav .nav-item {
       color: #484848 !important;
       margin-right: 0;
       transition: all 0.3s;
     }
+
     .nav-item .nav-link {
       color: #484848 !important;
       padding: 25px 16px;
@@ -171,101 +188,76 @@
       <img class="logo" src="../assets/img/LOGO01.svg" alt="" />
     </a>
   </div>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item nav-item-7 dropdown nav-item-r">
+          <a i18n="語言" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            語言
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item language-item" data-lang="tch">繁体中文</a>
+            </li>
+            <li>
+              <a class="dropdown-item language-item" data-lang="sch">简体中文</a>
+            </li>
+            <li>
+              <a class="dropdown-item language-item" data-lang="en">English</a>
+            </li>
+          </ul>
+        </li>
         <li class="nav-item nav-item-0 nav-item-r">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            href="/pages/index.html"
-            >首頁</a
-          >
+          <a i18n="首頁" class="nav-link active" aria-current="page" href="/pages/index.html">首頁</a>
         </li>
         <li class="nav-item nav-item-1 dropdown nav-item-r">
-          <a
-            class="nav-link dropdown-toggle"
-            href="/pages/about-us.html"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <a class="nav-link dropdown-toggle" href="/pages/about-us.html" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false" i18n="關於我們">
             關於我們
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a
-                class="dropdown-item dropdown-item-1-1"
-                href="/pages/protocol.html"
-                >客戶協議</a
-              >
+              <a class="dropdown-item dropdown-item-1-1" href="/pages/protocol.html" i18n="客戶協議">客戶協議</a>
             </li>
             <li>
-              <a
-                class="dropdown-item dropdown-item-1-2"
-                href="/pages/policy.html"
-                >隱私政策</a
-              >
+              <a class="dropdown-item dropdown-item-1-2" href="/pages/policy.html" i18n="隱私政策">隱私政策</a>
             </li>
           </ul>
         </li>
         <li class="nav-item nav-item-2 nav-item-r">
-          <a class="nav-link" href="/pages/news.html">最新消息</a>
+          <a class="nav-link" href="/pages/news.html" i18n="最新消息">最新消息</a>
         </li>
         <li class="nav-item nav-item-3 nav-item-r">
-          <a class="nav-link" href="/pages/process.html">購買流程</a>
+          <a class="nav-link" href="/pages/process.html" i18n="購買流程">購買流程</a>
         </li>
         <li class="nav-item nav-item-4 nav-item-r">
-          <a class="nav-link" href="/pages/cloudhash.html">產品介绍1</a>
+          <a class="nav-link" href="/pages/cloudhash.html" i18n="產品介绍">產品介绍</a>
         </li>
         <li class="nav-item dropdown nav-item-5 nav-item-r">
-          <a
-            class="nav-link dropdown-toggle login_name"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            style="
+          <a class="nav-link dropdown-toggle login_name" href="#" role="button" data-bs-toggle="dropdown" style="
               display: flex;
               align-items: center;
               width: 100%;
               justify-content: center;
-            "
-            aria-expanded="false"
-          >
-            <img
-              class="member_icon"
-              style="margin-right: 10px"
-              src="../assets/img/member_icon.png"
-              alt=""
-            />
-            <span class="merber_name"> 登入/註冊</span>
+            " aria-expanded="false">
+            <img class="member_icon" style="margin-right: 10px" src="../assets/img/member_icon.png" alt="" />
+            <span class="merber_name"> </span>
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a
-                class="dropdown-item dropdown-item-5-1"
-                href="/pages/account.html"
-                >會員中心</a
-              >
+              <a class="dropdown-item dropdown-item-5-1" href="/pages/account.html" i18n="會員中心">會員中心</a>
             </li>
             <li id="logout">
-              <a class="dropdown-item dropdown-item-5-1">登出</a>
+              <a class="dropdown-item dropdown-item-5-1" i18n="登出">登出</a>
             </li>
           </ul>
         </li>
         <li class="nav-item nav-item-6">
-          <a class="nav-link" href="/pages/login.html"> 登入/注册 </a>
+          <a class="nav-link" href="/pages/login.html" i18n="登入/註冊"> 登入/註冊 </a>
         </li>
       </ul>
     </div>
@@ -276,8 +268,23 @@
 <script src="../js/api.js"></script>
 <script src="../js/msg.i18n.js"></script>
 <script src="../bootstrap/clipboard.min.js"></script>
+<script src="../i18n/config/jquery.i18n.js"></script>
 <script>
   function getLocation() {
+    let lang = localStorage.getItem('lang');
+    if (lang === '' || !lang) {
+      lang = 'tch'
+    }
+    $("[i18n]").i18n({
+      defaultLang: lang,
+      filePath: '/i18n/language/',
+      filePrefix: "i18n_",
+      fileSuffix: "",
+      forever: true,
+      callback: function () {
+        console.log('i18n ok');
+      }
+    })
     const routes = [
       {
         num: "0",
@@ -385,4 +392,15 @@
       }, 2000);
     });
   });
+  $('.language-item').click(function () {
+    console.log($(this).attr('data-lang'))
+    localStorage.setItem('lang', $(this).attr('data-lang'));
+    $('[i18n]').i18n({
+      defaultLang: $(this).attr('data-lang'),
+      filePath: '/i18n/language/',
+      callback: function () {
+        window.location.reload();
+      }
+    })
+  })
 </script>

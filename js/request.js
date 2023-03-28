@@ -20,10 +20,14 @@
       }
       $.loading(true);
       var token = localStorage.getItem("token");
+      var lang = localStorage.getItem("lang");
+      if (!lang || lang === '') {
+        lang = 'tch'
+      }
       // 不需要登录
       if (url.indexOf("/api/app/") !== -1) {
         $.ajax({
-          url: `https://preadmin.dtbminer.com/${url}`,
+          url: `https://preadmin.dtbminer.com/${url}?lang=${lang}`,
           type: "get",
           dataType: "json",
           success: function (data) {
@@ -39,7 +43,7 @@
         });
       } else {
         $.ajax({
-          url: `https://preadmin.dtbminer.com/${url}`,
+          url: `https://preadmin.dtbminer.com/${url}?lang=${lang}`,
           type: "get",
           headers: { token: token },
           dataType: "json",
@@ -68,10 +72,14 @@
       }
       $.loading(true);
       var token = localStorage.getItem("token");
+      var lang = localStorage.getItem("lang");
+      if (!lang || lang === '') {
+        lang = 'tch'
+      }
       // 不需要登录
       if (url.indexOf("/api/app/") !== -1) {
         $.ajax({
-          url: `https://preadmin.dtbminer.com${url}`,
+          url: `https://preadmin.dtbminer.com${url}?lang=${lang}`,
           type: "post",
           dataType: "json",
           data: JSON.stringify(data),
@@ -95,7 +103,7 @@
         });
       } else {
         $.ajax({
-          url: `https://preadmin.dtbminer.com/${url}`,
+          url: `https://preadmin.dtbminer.com/${url}?lang=${lang}`,
           type: "post",
           headers: { token: token },
           dataType: "json",

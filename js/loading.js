@@ -11,7 +11,7 @@
   };
   $.error = function (msg) {
     $("body").append(
-      `<div class="fixed-error-msg"><div class="alert alert-danger" role="alert">
+      `<div class="fixed-error-msg"><div class="alert alert-secondary" role="alert">
       ${msg}
     </div></div>`
     );
@@ -21,7 +21,7 @@
   };
   $.success = function (msg) {
     $("body").append(
-      `<div class="fixed-success-msg"><div class="alert alert-success" role="alert">
+      `<div class="fixed-success-msg"><div class="alert alert-secondary" role="alert">
       ${msg}
     </div></div>`
     );
